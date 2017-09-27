@@ -83,4 +83,28 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias games="cd ~/Documents/Achilles/Ahu/game_source"
+alias push="git push"
+alias gp="push"
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  
+
+# FUNCTIONS
+x() {
+  echo $1
+}
+
+gac() {
+  if [ $# -eq 0 ]
+  then
+    echo "Must add commit message"
+  else
+    message=""
+    for var in "$@"
+    do
+      message="$message$var "
+    done
+    echo $message
+    git add -p;
+    git commit -m $message
+  fi 
+}
