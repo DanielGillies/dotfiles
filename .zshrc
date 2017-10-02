@@ -98,7 +98,7 @@ gac() {
   then
     echo "Must add commit message"
   else
-    message=""
+    message="${PWD##*/}: "
     for var in "$@"
     do
       message="$message$var "
