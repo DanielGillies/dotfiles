@@ -110,3 +110,17 @@ gac() {
     git commit -m $message
   fi 
 }
+
+gn() {
+  if [ $# -eq 0 ]
+  then
+    echo "$(cat ~/game_names.txt)"
+  else
+    args=""
+    for var in "$@"
+    do
+      args="$args$var "
+    done
+    echo "$(cat ~/game_names.txt | grep -i $args)"
+  fi
+}
