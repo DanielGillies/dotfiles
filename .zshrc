@@ -121,6 +121,7 @@ gn() {
     do
       args="$args$var "
     done
-    echo "$(cat ~/game_names.txt | grep -i $args)"
+    args=$(echo $args | xargs)
+    echo $(cat ~/game_names.txt | grep -i $args)
   fi
 }
