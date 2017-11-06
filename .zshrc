@@ -125,3 +125,10 @@ gn() {
     echo $(cat ~/game_names.txt | grep -i $args)
   fi
 }
+
+gpushnew() {
+  branch=$(git rev-parse --abbrev-ref HEAD)
+  cmd="git push --set-upstream origin $branch"
+  echo $cmd
+  eval $cmd
+}
